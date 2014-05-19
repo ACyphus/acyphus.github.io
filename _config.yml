@@ -1,0 +1,11 @@
+# Site settings
+title: Alex Cyphus
+email: a.cyphus@gmail.com
+description: "The personal blog of Alex Cyphus."
+baseurl: ""
+url: "http://alexcyphus.co.uk"
+username: "ACyphus"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
