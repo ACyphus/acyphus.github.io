@@ -2,7 +2,6 @@
 layout: post
 title:  "The Welcoming Jekyll"
 date:   2014-05-19 21:09:32
-categories: jekyll update
 ---
 
 So this is Jekyll. I'd heard a lot of good things.
