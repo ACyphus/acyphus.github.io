@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="http://www.alexcyphus.co.uk/js/jquery.storageapi.min.js"></script>
+    <script>
+      $(function() {
+        // initialise session storage object
+        var storage = $.sessionStorage;
+        
+        // on pageload set the value of each input to the stored value
+        $('.storeValue').each(function() {
+          $(this).val(storage.get(this.name));
+        });
+        
+        // on data input store the value
+        $('.storeValue').bind("keyup change blur", function() {
+          storage.set(this.name, $(this).val());
+        });
+
+        // fire click event on hitting enter on the submit button
+        $('.submit').keydown(function(event){    
+          if(event.keyCode==13){
+             $('.submit').trigger('click');
+          }
+        });
+
+        // empty storage and reload page on submit button click
+        $('.submit').click(function(){ 
+          storage.removeAll();
+          location.reload();
+        });
+        
+      });
+    </script>
+    <style>
+      label {
+        width:150px;
+        display:inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Alex Cyphus's Passing The Refresh Test Example</h1>
+    <fieldset>
+      <legend>Form</legend>
+      <label for="firstName">First Name:</label><input type="text" name="firstName" class="storeValue" value=""><br>
+      <label for="lastName">Last Name:</label><input type="text" name="lastName" class="storeValue"><br>
+      <label for="emailAddress">Email Address:</label><input type="email" name="emailAddress" class="storeValue"><br>
+      <label for="mobileNumber">Mobile Number:</label><input type="number" name="mobileNumber" class="storeValue"><br>
+      <label for="personalStatement">Personal Statement:</label><textarea name="personalStatement" class="storeValue"></textarea><br>
+      <label for="yearOfEntry">Year of Entry:</label>
+      <select name="yearOfEntry" class="storeValue">
+        <option>Please Select...</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+      </select><br>
+      <label for="password">Password:</label><input type="password" name="password" class=""><br>
+      <input type="submit" class="submit">
+    </fieldset>
+  </body>
+</html
