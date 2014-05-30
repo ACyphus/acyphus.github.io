@@ -4,7 +4,6 @@ title:  "Passing The Refresh Test"
 date:   2014-05-30 00:56:32
 ---
 
-# Passing The Refresh Test
 In this modern world of the web, refreshing a web page should not lose data. It should not make me lose my progress. Until I read [@eviltrout](https://twitter.com/eviltrout "@eviltrout on twitter")'s post about [The Refresh Test](http://eviltrout.com/2014/04/10/the-refresh-test.html "The Refresh Test by Robin Ward"), I didn't realise preventing data loss on a refresh was so easy. @eviltrout pointed towards persisting form data in localStorage. I took this direction and investigated just how easy this is to do for an average web form. This is what I found out.
 
 ## localStorage and sessionStorage
