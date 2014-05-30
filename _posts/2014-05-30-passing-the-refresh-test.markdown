@@ -21,20 +21,26 @@ After a quick search, I discovered a jQuery Plugin called **jQuery Storage API**
 **jQuery Storage API** simply wraps the native HTML5 Web Storage  tools in beautifully simple API calls.
 
 The first step is to initialise the sessionStorage object:
-`var storage = $.sessionStorage;`
+```javascript
+var storage = $.sessionStorage;
+```
 
 Next up, we need to add our sessionStorage data. HTML5 Web Storage stores data in key value pairs. I decided that I wanted to store the data as it is typed. For this I trigger data storage on keyup, change, and blur events in the browser. 
-`$('.storeValue').bind("keyup change blur", function() {
+```javascript
+$('.storeValue').bind("keyup change blur", function() {
  	storage.set(this.name, $(this).val());
- });`
+ });
+```
 
 So this code will store every inputs value and name in key value pairs in the sessionStorage each time the value of the input changes. All I need to do is apply the .storeValue class to an input and it's name and value will be stored in my sessionStorage.
 
 At this point we are storing input values as we type and change input values. But if I refresh my browser, it appears as if I still loss my data. So the next step is to load the data from sessionStorage on page load.
 
-`$('.storeValue').each(function() {
+```javascript
+$('.storeValue').each(function() {
 	$(this).val(storage.get(this.name));
-});`
+});
+```
 
 The above code simply loops through all inputs with the .storeValue class, and pulls the value for each input from the sessionStorage and puts it into the inputs value.
 
@@ -42,18 +48,22 @@ Now if I enter some values and refresh my page, my data is still there! Mission 
 
 If I submit this form, then revisit it within the same browser session, all of the sessionStorage data will still be there. This gives the impression that the form never submitted my information, so I should hit submit and try again. To prevent this poor user experience, we need to clear the sessionStorage for this form on submit.
 
-`$('.submit').click(function(){ 
+```javascript
+$('.submit').click(function(){ 
 	storage.removeAll();
-});`
+});
+```
 
 This code very simply removes all sessionStorage data when the submit button is clicked. For my super simple example, this works as expected. But you may have validation happening on click, or you may want to wait for a response from the form submission before clearing this data. In this case you will probably want to remove the data on a different event.
 
 For my example, I also wanted to provide the same experience for visitors submitting the form with their keyboard, so I used the code below to trigger the click event on hitting enter on the submit button.
 
-`$('.submit').keydown(function(event){    
+```javascript
+$('.submit').keydown(function(event){    
 	if(event.keyCode==13){
 		$('.submit').trigger('click');
 	}
-});`
+});
+```
 
 You can [view the full demo here](http://www.alexcyphus.co.uk/experiments/refresh-test/ "Passing The Refresh Test Demo") and [view the source here](https://github.com/ACyphus/sessionStorageDemo "sessionStorage Demo Source Code").
