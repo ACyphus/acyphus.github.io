@@ -15,7 +15,7 @@ I like to apply these principals to real life situations:
 
 That last one inspired this weeks experiment:
 
-Image
+![Before and After with chair]({{ site.baseurl }}/assets/sitting-room-chair.jpg)
 
 This experiment is a combination of testing my mind and body's resilience to my dependancy on a reasonably comfortable chair for viewing my TV, and seeing if I sit in a chair out of habit or necessity.
 
