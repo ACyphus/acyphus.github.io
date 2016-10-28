@@ -1,11 +1,32 @@
 # Site settings
-title: Alex Cyphus
+title: Alex Cyphus - Person
+description: "A site about life"
+baseurl: "" # the subpath of your site
+url: "http://cyphus.io"
+
+# User settings
+username: Alex Cyphus
+user_title: Alex Cyphus - FrontEnd
 email: a.cyphus@gmail.com
-description: "The personal blog of Alex Cyphus."
-baseurl: ""
-url: "http://alexcyphus.co.uk"
-username: "ACyphus"
+twitter_username: ACyphus
+github_username:  acyphus
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 permalink: pretty
+
+
+# html minify
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+
+# Links to include in menu navigation
+links:
+  - title: home
+    url: /
+  - title: my posts
+    url: /posts
