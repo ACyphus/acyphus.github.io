@@ -58,6 +58,6 @@ For my example, I also wanted to provide the same experience for visitors submit
 		}
 	});
 
-You can [view the full demo here](http://www.alexcyphus.co.uk/experiments/refresh-test/ "Passing The Refresh Test Demo") and [view the source here](https://github.com/ACyphus/sessionStorageDemo "sessionStorage Demo Source Code").
+You can [view the full demo here](https://acyphus.github.io/experiments/refresh-test/ "Passing The Refresh Test Demo") and [view the source here](https://github.com/ACyphus/sessionStorageDemo "sessionStorage Demo Source Code").
 
 If you have any questions or would like to get in touch, you can find me [@ACyphus](https://twitter.com/ACyphus "@ACyphus on twitter").
